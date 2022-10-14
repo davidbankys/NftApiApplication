@@ -1,11 +1,12 @@
-﻿using System;
+﻿using NftApiApplication.Models;
+using NftApiApplication.Services;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
 namespace NftApiApplication.Services
 {
-    public class INftapiDataStore
+    interface INftapiDataStore<T>
     {
-        public INftapiDataStore()
-        {
-        }
+        Task<IEnumerable<Nftapi>> GetNftapisAsync(int count);
     }
 }
-
