@@ -5,28 +5,28 @@ using Newtonsoft.Json.Linq;
 using NftApiApplication.Services;
 using System.Dynamic;
 
-namespace EmployeeApplication.Services
+namespace PublicApiApplication.Services
 {
-    class NftapiDataStoreAPI : INftapiDataStore<Nftapi>
+    class PublicapiDataStoreAPI : INftapiDataStore<Nftapi>
     {
-        private static string API => "https://randomuser.me/api/";
+        private static string API => "https://api.opensea.io/api/v1/assets?format=json";
 
         public async Task<IEnumerable<Nftapi>> GetEmployeesAsync(int count)
         {
             var service = DependencyService.Get<IWebClientService>();
             var json = await service.GetAsync($"{API}?results={count}");
 
-            var employees = EmployeeBuilder(json);
+            var nftapi = NftapiAPIBuilder(json);
 
             return nftapi;
         }
-        private List<Nftapi> EmployeeBuilder(string json)
+        private List <Nftapi> NftapiAPIBuilder(string json)
         {
 
             var response = JsonConvert.DeserializeObject<dynamic>(json);
             var users = response.results;
 
-            var nftapis = new List<Nftapi>();
+            var nft_api = new List<Nftapi> ();
 
             foreach (var user in users)
             {
@@ -36,11 +36,11 @@ namespace EmployeeApplication.Services
                 var email = user.email.ToString();
                 var image = user.picture.medium.ToString();
 
-                employees.Add(new Nftapi(name, email, image));
+                nft_api.Add(new Nftapi(name, email, image));
 
             }
 
-            return employees;
+            return nft_api;
         }
 
         public static class UserBuilder
