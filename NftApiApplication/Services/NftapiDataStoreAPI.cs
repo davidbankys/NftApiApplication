@@ -5,13 +5,14 @@ using Newtonsoft.Json.Linq;
 using NftApiApplication.Services;
 using System.Dynamic;
 
-namespace PublicApiApplication.Services
+namespace NftApiApplication.Services
 {
-    class PublicapiDataStoreAPI : INftapiDataStore<Nftapi>
+    class NftapiDataStoreAPI : INftapiDataStore<Nftapi>
     {
         private static string API => "https://api.opensea.io/api/v1/assets?format=json";
 
-        public async Task<IEnumerable<Nftapi>> GetEmployeesAsync(int count)
+
+        public async Task<IEnumerable<Nftapi>> GetNftapisAsync(int count)
         {
             var service = DependencyService.Get<IWebClientService>();
             var json = await service.GetAsync($"{API}?results={count}");
@@ -30,13 +31,10 @@ namespace PublicApiApplication.Services
 
             foreach (var user in users)
             {
-                var firstName = user.name.first.ToString();
-                var lastName = user.name.last.ToString();
-                var name = $"{firstName} {lastName}";
-                var email = user.email.ToString();
-                var image = user.picture.medium.ToString();
-
-                nft_api.Add(new Nftapi(name, email, image));
+              
+                var name = $"Name";
+                var image_url = user.picture.medium.ToString();
+                nft_api.Add(new Nftapi(name, image_url));
 
             }
 

@@ -1,18 +1,36 @@
 ﻿<Properties StartupConfiguration="{FD33634F-E4E3-4180-90E6-ECAE4C1538AF}|Default">
-  <MonoDevelop.Ide.ItemProperties.NftApiApplication FirstBuild="True" PreferredExecutionTarget="MyAppleMacCatalystID" />
+  <MonoDevelop.Ide.ItemProperties.NftApiApplication PreferredExecutionTarget="MyAppleMacCatalystID" />
   <Xamarin.Addins.Core.Project ActiveDebugTarget="MyAppleMacCatalystID" />
   <MonoDevelop.MonoDroid LastDeploySdkVersion="13.0.0.0" />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Services/NftapiDataStoreAPI.cs">
+    <Files>
+      <File FileName="Services/NftapiDataStoreAPI.cs" Line="37" Column="37" />
+      <File FileName="ViewModels/NftapiListViewModel.cs" Line="12" Column="101" />
+      <File FileName="Services/INftapiDataStore.cs" Line="1" Column="1" />
+      <File FileName="Services/IWebClientService.cs" Line="1" Column="1" />
+      <File FileName="Views/MainPage.xaml.cs" Line="12" Column="1" />
+      <File FileName="Views/MainPage.xaml" Line="2" Column="61" />
+      <File FileName="MauiProgram.cs" Line="13" Column="31" />
+      <File FileName="AppShell.xaml" Line="1" Column="1" />
+      <File FileName="App.xaml.cs" Line="11" Column="10" />
+      <File FileName="Services/WebClientService.cs" Line="1" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="NftApiApplication" expanded="True">
             <Node name="NftApiApplication" expanded="True">
               <Node name="Models" expanded="True" />
-              <Node name="Services" expanded="True" />
+              <Node name="Services" expanded="True">
+                <Node name="NftapiDataStoreAPI.cs" selected="True" />
+              </Node>
               <Node name="ViewModels" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="MainPage.xaml" expanded="True" />
+              </Node>
+              <Node name="App.xaml" expanded="True" />
             </Node>
           </Node>
         </State>

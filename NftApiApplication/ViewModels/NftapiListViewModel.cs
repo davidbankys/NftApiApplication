@@ -9,7 +9,7 @@ namespace NftApiApplication.ViewModels
     
     internal class NftapiListViewModel
     {
-        public INftapiDataStore<Nftapi> DataStore => DependencyService.Get<INftapiDataStore<Employee>>();
+        public INftapiDataStore<Nftapi> DataStore => DependencyService.Get<INftapiDataStore<Nftapi>>();
         public ObservableRangeCollection<Nftapi> Nftapi { get; set; }
         public AsyncCommand PageAppearingCommand { get; }
 
@@ -23,7 +23,7 @@ namespace NftApiApplication.ViewModels
         {
             var nftapis = await DataStore.GetNftapisAsync(20);
 
-            Employees.AddRange(nftapis);
+            Nftapi.AddRange(nftapis);
         }
 
         async Task PageAppearing()
